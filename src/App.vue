@@ -82,10 +82,9 @@ body::-webkit-scrollbar {
   transition: linear 0.2s;
 }
 dialog {
-  width: 30rem;
   border: none;
   border-radius: 10px;
-  padding: 3rem;
+  padding: 2rem;
 }
 form {
   width: 100%;
