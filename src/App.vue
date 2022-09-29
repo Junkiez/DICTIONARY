@@ -1,5 +1,5 @@
 <template>
-  <button @click="add()" id="add">Add own word +</button>
+  <button @click="add()" class="btn" id="add">Add own word +</button>
   <img alt="Vue logo" width="250" src="./assets/logo.jpg" />
   <Dict msg="Hello Vue 3 in CodeSandbox!" />
 </template>
@@ -35,21 +35,23 @@ body::-webkit-scrollbar {
   color: #2c3e50;
   margin-top: 60px;
 }
-#add {
+#add{
   position: absolute;
   top: 1rem;
   right: 1rem;
+}
+.btn {
   background-color: transparent;
   border: none;
   transition: linear 0.2s;
   padding: 5px;
   border-radius: 10px;
 }
-#add:hover {
+.btn:hover {
   background-color: yellowgreen;
   transition: linear 0.2s;
 }
-#add:active {
+.btn:active {
   background-color: yellow;
   transition: linear 0.2s;
 }

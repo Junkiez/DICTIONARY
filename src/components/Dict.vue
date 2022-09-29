@@ -2,9 +2,10 @@
   <div class="main">
     <h1>Dictionary</h1>
     <p>Collection of modern words of students and programmers.</p>
-    <input type="text" v-model="search" placeholder="Type word here..." />
-    <h3>Words:</h3>
-    <ul>
+    <input type="text" v-model="search" placeholder="Type word here..." /> <i v-if="!list"> or </i>
+    <button v-if="!list" class="btn" @click="()=> list=true">Show full list</button>
+    <h3 v-if="search !== '' || list">Words:</h3>
+    <ul v-if="search !== '' || list">
       <li v-for="(i, j) in lst.filter(searchFilter)" :key="j">
         <p v-html="marked(i)"></p>
         <a
@@ -59,6 +60,7 @@ export default {
     return {
       search: "",
       lst: [],
+      list: false,
     };
   },
 };
