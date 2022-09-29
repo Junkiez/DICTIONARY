@@ -2,6 +2,18 @@
   <button @click="add()" class="btn" id="add">Add own word +</button>
   <img alt="Vue logo" width="250" src="./assets/logo.jpg" />
   <Dict msg="Hello Vue 3 in CodeSandbox!" />
+  <dialog id="addWord">
+    <form action="api/add/">
+      <label for="favAnimal">Word:</label>
+      <input type="text" name="word">
+      <label for="favAnimal">Description:</label>
+      <textarea type="text" name="meaning"></textarea>
+      <label for="favAnimal">Source link:</label>
+      <input type="text" name="ulinks">
+      <button @click="cancel()" id="cancel" type="reset" class="btn" >Cancel</button>
+      <button type="submit" class="btn" >Send</button>
+    </form>
+  </dialog>
 </template>
 
 <script>
@@ -11,8 +23,16 @@ export default {
   components: {
     Dict: Dict,
   },
+  data(){return{
+    dialog_class: "",
+  }},
   methods: {
-    add() {},
+    add() {
+      document.getElementById("addWord").showModal();
+    },
+    cancel() {
+      document.getElementById("addWord").close();
+    }
   },
 };
 </script>
@@ -54,5 +74,30 @@ body::-webkit-scrollbar {
 .btn:active {
   background-color: yellow;
   transition: linear 0.2s;
+}
+dialog {
+  width: 30rem;
+  border: none;
+  border-radius: 10px;
+  padding: 3rem;
+}
+form {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+form > * {
+  margin: 0.5rem;
+}
+
+input[type="text"], textarea {
+  border-radius: 10px;
+  padding: 5px;
+  border: solid 1px;
+}
+
+textarea {
+  resize: vertical;
 }
 </style>

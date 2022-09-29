@@ -101,9 +101,4 @@ a:hover {
   border-radius: 10px;
   transition: linear 0.2s;
 }
-input[type="text"] {
-  border-radius: 10px;
-  padding: 5px;
-  border: solid 1px;
-}
 </style>
