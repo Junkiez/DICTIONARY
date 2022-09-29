@@ -11,7 +11,7 @@
       <label for="favAnimal">Source link:</label>
       <input type="text" name="ulinks">
       <button @click="cancel()" id="cancel" type="reset" class="btn" >Cancel</button>
-      <button type="submit" class="btn" >Send</button>
+      <button @click="cancel()" type="submit" class="btn" >Send</button>
     </form>
   </dialog>
 </template>
