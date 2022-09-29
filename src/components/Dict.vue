@@ -67,8 +67,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .main {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
   margin-inline: auto;
   max-width: min(100% - 3rem, 900px);
 }

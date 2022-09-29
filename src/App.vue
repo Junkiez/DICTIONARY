@@ -18,6 +18,15 @@ export default {
 </script>
 
 <style>
+html,body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -38,6 +47,10 @@ export default {
 }
 #add:hover {
   background-color: yellowgreen;
+  transition: linear 0.2s;
+}
+#add:active {
+  background-color: yellow;
   transition: linear 0.2s;
 }
 </style>
