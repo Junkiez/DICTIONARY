@@ -5,11 +5,11 @@
   <dialog id="addWord">
     <form action="api/add/">
       <label for="favAnimal">Word:</label>
-      <input type="text" name="word">
+      <input v-model="word" type="text" name="word">
       <label for="favAnimal">Description:</label>
-      <textarea type="text" name="meaning"></textarea>
+      <textarea v-model="meaning" type="text" name="meaning"></textarea>
       <label for="favAnimal">Source link:</label>
-      <input type="text" name="ulinks">
+      <input v-model="ulinks" type="text" name="ulinks">
       <button @click="cancel()" id="cancel" type="reset" class="btn" >Cancel</button>
       <button @click="cancel()" type="submit" class="btn" >Send</button>
     </form>
@@ -25,12 +25,18 @@ export default {
   },
   data(){return{
     dialog_class: "",
+    word: "",
+    meaning: "",
+    ulinks: "",
   }},
   methods: {
     add() {
       document.getElementById("addWord").showModal();
     },
     cancel() {
+      this.word = "";
+      this.meaning = "";
+      this.ulinks = "";
       document.getElementById("addWord").close();
     }
   },
