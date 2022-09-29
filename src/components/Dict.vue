@@ -58,26 +58,7 @@ export default {
   data() {
     return {
       search: "",
-      lst: [
-        {
-          word: "Server",
-          meaning: "cloud platform",
-          ulinks: [
-            "https://www.computerhope.com/jargon/s/server.htm",
-            "https://www.computerhope.com/jargon/s/server.htm",
-          ],
-        },
-        {
-          word: "Server",
-          meaning: "cloud platform",
-          ulinks: ["https://www.computerhope.com/jargon/s/server.htm"],
-        },
-        {
-          word: "Server",
-          meaning: "cloud platform",
-          ulinks: ["https://www.computerhope.com/jargon/s/server.htm"],
-        },
-      ],
+      lst: [],
     };
   },
 };
