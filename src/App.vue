@@ -5,11 +5,11 @@
   <dialog id="addWord">
     <form action="api/add/" method="POST" >
       <label for="favAnimal">Word:</label>
-      <input v-model="word" type="text" name="word">
+      <input value="word" type="text" name="word">
       <label for="favAnimal">Description:</label>
-      <textarea v-model="meaning" type="text" name="meaning"></textarea>
+      <textarea value="meaning" type="text" name="meaning"></textarea>
       <label for="favAnimal">Source link:</label>
-      <input v-model="ulinks" type="text" name="ulinks">
+      <input value="ulinks" type="text" name="ulinks">
       <button @click="cancel()" id="cancel" type="reset" class="btn" >Cancel</button>
       <button @click="cancel()" type="submit" class="btn" >Send</button>
     </form>
