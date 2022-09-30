@@ -106,7 +106,7 @@ textarea {
   resize: vertical;
 }
 .bor {
-  background-color: transparent;
+  background-color: white;
   border: solid 1px #2c3e50;
   transition: linear 0.2s;
   padding: 5px;
