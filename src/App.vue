@@ -3,7 +3,7 @@
   <img alt="Vue logo" width="250" src="./assets/logo.jpg" />
   <Dict msg="Hello Vue 3 in CodeSandbox!" />
   <dialog id="addWord">
-    <form action="api/add/" method="POST" >
+    <form>
       <label for="favAnimal">Word:</label>
       <input :value="word" @input="word = $event.target.value" type="text" name="word">
       <label for="favAnimal">Description:</label>
@@ -11,7 +11,7 @@
       <label for="favAnimal">Source link:</label>
       <input :value="ulinks" @input="ulinks = $event.target.value" type="text" name="ulinks">
       <button @click="cancel()" id="cancel" type="reset" class="btn" >Cancel</button>
-      <button @click="cancel()" type="submit" class="btn" >Send</button>
+      <button @click="send()" type="submit" class="btn" >Send</button>
     </form>
   </dialog>
 </template>
@@ -38,7 +38,24 @@ export default {
       this.meaning = "";
       this.ulinks = "";
       document.getElementById("addWord").close();
-    }
+    },
+    send() {
+      var xhttp = new XMLHttpRequest();
+      let dat = new FormData();
+      dat.append("word", this.word);
+      dat.append("word", this.meaning);
+      dat.append("word", [this.ulinks]);
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          this.word = "";
+          this.meaning = "";
+          this.ulinks = "";
+          document.getElementById("addWord").close();
+        }
+      };
+      xhttp.open("POST", "api/add/", true);
+      xhttp.send(dat);
+    },
   },
 };
 </script>
