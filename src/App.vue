@@ -3,7 +3,7 @@
   <img alt="Vue logo" width="250" src="./assets/logo.jpg" />
   <Dict msg="Hello Vue 3 in CodeSandbox!" />
   <dialog id="addWord">
-    <form>
+    <form action="api/add" method="POST" >
       <label for="favAnimal">Word:</label>
       <input :value="word" @input="word = $event.target.value" type="text" name="word">
       <label for="favAnimal">Description:</label>
