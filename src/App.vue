@@ -10,8 +10,8 @@
       <textarea v-model="meaning" type="text" name="meaning"></textarea>
       <label for="favAnimal">Source link:</label>
       <input v-model="ulinks" type="text" name="ulinks">
-      <button @click="cancel()" id="cancel" type="reset" class="btn" >Cancel</button>
-      <button @click="cancel()" type="submit" class="btn" >Send</button>
+      <button @click="cancel()" id="cancel" type="reset" class="btn bor" >Cancel</button>
+      <button @click="cancel()" type="submit" class="btn bor" >Send</button>
     </form>
   </dialog>
 </template>
@@ -104,5 +104,9 @@ input[type="text"], textarea {
 
 textarea {
   resize: vertical;
+}
+
+.bor {
+  border: solid 1px #2c3e50;
 }
 </style>
