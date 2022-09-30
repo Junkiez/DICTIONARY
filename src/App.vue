@@ -5,11 +5,11 @@
   <dialog id="addWord">
     <form action="api/add/" method="POST" >
       <label for="favAnimal">Word:</label>
-      <input value="word" type="text" name="word">
+      <input :value="word" @input="word = $event.target.value" type="text" name="word">
       <label for="favAnimal">Description:</label>
-      <textarea value="meaning" type="text" name="meaning"></textarea>
+      <textarea :value="meaning" @input="meaning = $event.target.value" type="text" name="meaning"></textarea>
       <label for="favAnimal">Source link:</label>
-      <input value="ulinks" type="text" name="ulinks">
+      <input :value="ulinks" @input="ulinks = $event.target.value" type="text" name="ulinks">
       <button @click="cancel()" id="cancel" type="reset" class="btn" >Cancel</button>
       <button @click="cancel()" type="submit" class="btn" >Send</button>
     </form>
