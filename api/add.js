@@ -23,5 +23,5 @@ export default async function handler(req, res) {
   );
   // res.status(200).send(data);
   res.writeHead(200, { 'Content-Type':'text/html'});
-  res.end(`<center><h1>Succesful</h1><center><center><a href="/">← Go back</a><center>`);
+  res.end(`<center><h1>Succesful</h1><center><center><a href="/">Go back</a><center>`);
 }
