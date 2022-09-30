@@ -1,15 +1,6 @@
-import type { NextApiRequest, NextApiResponse } from "next";
 import { createClient } from "redis";
 
-type Data = {
-  name: string;
-};
-
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
-  /*
+export default async function handler(req, res) {
   const client = createClient({
     url:
       "redis://default:IMNsVUEYDVsah2OlxEplqM7CIjbNJiwD@redis-15589.c267.us-east-1-4.ec2.cloud.redislabs.com:15589"
@@ -17,9 +8,9 @@ export default async function handler(
 
   client.on("error", (err) => console.log("Redis Client Error", err));
   await client.connect();
-  const data = JSON.parse(<string>await client.get("words"));
+  req.body.ulinks = [req.body.ulinks];
+  await client.set(req.body.word, JSON.stringify(req.body));
   await client.disconnect();
-  */
   res.setHeader("Access-Control-Allow-Credentials", true);
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
@@ -31,5 +22,5 @@ export default async function handler(
     "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
   );
   // res.status(200).send(data);
-  res.status(200).json(req.body);
+  res.status(200).send(req.body);
 }
