@@ -31,5 +31,5 @@ export default async function handler(
     "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
   );
   // res.status(200).send(data);
-  res.status(200).json(req.query);
+  res.status(200).json(req.body);
 }
