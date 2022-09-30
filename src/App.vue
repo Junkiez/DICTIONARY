@@ -107,6 +107,6 @@ textarea {
 }
 
 .bor {
-  border: solid 1px #2c3e50;
+  border: solid 1px #2c3e50 !important;
 }
 </style>
