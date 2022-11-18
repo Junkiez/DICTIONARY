@@ -22,7 +22,7 @@ export default async function handler(
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
     "Access-Control-Allow-Methods",
-    "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+    "GET"
   );
   res.setHeader(
     "Access-Control-Allow-Headers",
