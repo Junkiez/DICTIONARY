@@ -7,7 +7,7 @@
       <label for="favAnimal">Word:</label>
       <input :value="word" @input="word = $event.target.value" type="text" name="word">
       <label for="favAnimal">Who add:</label>
-      <input :value="who" @input="word = $event.target.value" type="text" name="who">
+      <input :value="who" @input="who = $event.target.value" type="text" name="who">
       <label for="favAnimal">Description:</label>
       <textarea :value="meaning" @input="meaning = $event.target.value" type="text" name="meaning"></textarea>
       <label for="favAnimal">Source link:</label>
