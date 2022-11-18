@@ -24,7 +24,7 @@ export default async function handler(req, res) {
   }
   const client = createClient({
     url:
-      ""
+      "redis://default:IMNsVUEYDVsah2OlxEplqM7CIjbNJiwD@redis-15589.c267.us-east-1-4.ec2.cloud.redislabs.com:15589"
   });
 
   client.on("error", (err) => console.log("Redis Client Error", err));
