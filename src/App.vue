@@ -6,6 +6,8 @@
     <form action="api/add" method="POST" >
       <label for="favAnimal">Word:</label>
       <input :value="word" @input="word = $event.target.value" type="text" name="word">
+      <label for="favAnimal">Who add:</label>
+      <input :value="who" @input="word = $event.target.value" type="text" name="who">
       <label for="favAnimal">Description:</label>
       <textarea :value="meaning" @input="meaning = $event.target.value" type="text" name="meaning"></textarea>
       <label for="favAnimal">Source link:</label>
@@ -28,6 +30,7 @@ export default {
     word: "",
     meaning: "",
     ulinks: "",
+    who: "",
   }},
   methods: {
     add() {
@@ -37,14 +40,16 @@ export default {
       this.word = "";
       this.meaning = "";
       this.ulinks = "";
+      this.who = "";
       document.getElementById("addWord").close();
     },
     send() {
       var xhttp = new XMLHttpRequest();
       let dat = new FormData();
       dat.append("word", this.word);
-      dat.append("word", this.meaning);
-      dat.append("word", [this.ulinks]);
+      dat.append("who", this.who);
+      dat.append("meaning", this.meaning);
+      dat.append("links", [this.ulinks]);
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           this.word = "";
