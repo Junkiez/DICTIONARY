@@ -31,7 +31,7 @@ export default async function handler(req, res) {
   await client.connect();
   req.body.ulinks = [req.body.ulinks];
   let exists = JSON.parse(await client.get("words"));
-  exists.push(req.body);
+  exists = exists.push(req.body);
   await client.set("words", JSON.stringify(exists));
   await client.disconnect();
   res.setHeader("Access-Control-Allow-Credentials", true);
