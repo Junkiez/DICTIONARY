@@ -30,7 +30,7 @@ export default async function handler(req, res) {
   client.on("error", (err) => console.log("Redis Client Error", err));
   await client.connect();
   req.body.ulinks = [req.body.ulinks];
-  let exists = JSON.parse(<string>await client.get("words"));
+  let exists = JSON.parse(await client.get("words"));
   exists.push(req.body);
   await client.set("words", JSON.stringify(exists));
   await client.disconnect();
