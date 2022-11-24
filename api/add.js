@@ -31,7 +31,7 @@ export default async function handler(req, res) {
   await client.connect();
   req.body.ulinks = [req.body.ulinks];
   let exists = JSON.parse(await client.get("words"));
-  exists = exists.push(req.body);
+  exists.push(req.body);
   console.log(exists);
   await client.set("words", JSON.stringify(exists));
   await client.disconnect();
